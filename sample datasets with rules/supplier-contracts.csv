@@ -1,0 +1,33 @@
+supplier_name,contract_id,category,contract_value,monthly_spend,payment_terms,days_overdue,renewal_date,risk_score,status
+Acme Manufacturing,CNT-2401,Raw Materials,450000,37500,Net 30,0,2025-06-15,2,Active
+Global Logistics Inc,CNT-2402,Shipping,280000,23333,Net 45,5,2025-03-20,3,Active
+TechSupply Corp,CNT-2403,IT Equipment,175000,14583,Net 30,0,2025-09-10,1,Active
+Premier Parts Ltd,CNT-2404,Components,520000,43333,Net 60,15,2025-04-25,4,Active
+Metro Packaging,CNT-2405,Packaging,95000,7917,Net 30,0,2025-07-30,2,Active
+Industrial Tools Co,CNT-2406,Equipment,340000,28333,Net 45,45,2024-12-31,8,Expiring
+Swift Transport,CNT-2407,Shipping,215000,17917,Net 30,0,2025-05-18,2,Active
+Quality Materials,CNT-2408,Raw Materials,680000,56667,Net 60,22,2025-08-05,5,Active
+Office Supplies Plus,CNT-2409,Office,48000,4000,Net 30,0,2025-10-12,1,Active
+Digital Services LLC,CNT-2410,IT Services,125000,10417,Net 45,0,2025-11-22,2,Active
+Green Energy Solutions,CNT-2411,Utilities,390000,32500,Net 30,8,2025-06-28,3,Active
+Precision Engineering,CNT-2412,Manufacturing,755000,62917,Net 60,65,2025-01-15,9,Expiring
+Coastal Shipping,CNT-2413,Shipping,198000,16500,Net 30,0,2025-04-08,2,Active
+Safety Equipment Inc,CNT-2414,Safety,82000,6833,Net 45,0,2025-09-25,1,Active
+BuildRight Supplies,CNT-2415,Construction,445000,37083,Net 30,12,2025-03-14,4,Active
+DataCore Systems,CNT-2416,IT Services,265000,22083,Net 60,0,2025-12-05,2,Active
+Express Delivery,CNT-2417,Shipping,156000,13000,Net 30,0,2025-07-19,2,Active
+ChemSupply Direct,CNT-2418,Chemicals,580000,48333,Net 45,35,2025-02-28,7,Active
+Facility Services Pro,CNT-2419,Maintenance,225000,18750,Net 30,0,2025-08-16,2,Active
+Network Solutions,CNT-2420,IT Equipment,195000,16250,Net 45,0,2025-10-30,1,Active
+Universal Packaging,CNT-2421,Packaging,118000,9833,Net 30,0,2025-05-22,2,Active
+Alpha Logistics,CNT-2422,Shipping,305000,25417,Net 60,18,2025-04-12,4,Active
+Premium Materials Co,CNT-2423,Raw Materials,625000,52083,Net 45,0,2025-11-08,2,Active
+Secure Storage Inc,CNT-2424,Warehousing,175000,14583,Net 30,0,2025-09-03,1,Active
+MegaTech Industries,CNT-2425,Manufacturing,890000,74167,Net 60,52,2025-01-25,8,Expiring
+EcoPackaging Ltd,CNT-2426,Packaging,135000,11250,Net 30,0,2025-06-09,2,Active
+Fleet Services,CNT-2427,Transportation,245000,20417,Net 45,0,2025-07-28,2,Active
+Quality Control Labs,CNT-2428,Testing,98000,8167,Net 30,0,2025-10-15,1,Active
+Power Systems Inc,CNT-2429,Equipment,425000,35417,Net 60,28,2025-03-07,6,Active
+Cloud Services Pro,CNT-2430,IT Services,285000,23750,Net 45,0,2025-12-18,2,Active
+Rapid Parts Supply,CNT-2431,Components,365000,30417,Net 30,0,2025-08-21,2,Active
+Industrial Cleaners,CNT-2432,Maintenance,72000,6000,Net 30,0,2025-05-30,1,Active

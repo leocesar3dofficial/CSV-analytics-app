@@ -1,6 +1,50 @@
+import React, { useState } from 'react';
 import { Upload, TrendingUp } from 'lucide-react';
 
 export default function UploadView({ onFileUpload }) {
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+
+    const files = e.dataTransfer.files;
+    if (files && files.length > 0) {
+      const file = files[0];
+      if (file.type === 'text/csv' || file.name.endsWith('.csv')) {
+        // Create a synthetic event that matches the onChange signature
+        const syntheticEvent = {
+          target: { files: [file] }
+        };
+        onFileUpload(syntheticEvent);
+      } else {
+        alert('Please drop a CSV file');
+      }
+    }
+  };
+
+  const handleFileInputChange = (e) => {
+    onFileUpload(e);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
       <div className="bg-white rounded-lg shadow-xl p-12 max-w-2xl w-full">
@@ -10,19 +54,31 @@ export default function UploadView({ onFileUpload }) {
           <p className="text-gray-600">Import, process, and visualize your business data</p>
         </div>
 
-        <label className="block">
-          <div className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center hover:border-blue-500 transition cursor-pointer">
-            <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-            <p className="text-lg text-gray-700 mb-2">Drop your CSV file here or click to browse</p>
-            <p className="text-sm text-gray-500">Supports any CSV format with headers</p>
-            <input
-              type="file"
-              accept=".csv"
-              onChange={onFileUpload}
-              className="hidden"
-            />
-          </div>
-        </label>
+        <div
+          onDragEnter={handleDragEnter}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+          className={`border-2 border-dashed rounded-lg p-12 text-center transition cursor-pointer ${
+            isDragging 
+              ? 'border-blue-500 bg-blue-50' 
+              : 'border-gray-300 hover:border-blue-500'
+          }`}
+          onClick={() => document.getElementById('file-upload').click()}
+        >
+          <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+          <p className="text-lg text-gray-700 mb-2">
+            {isDragging ? 'Drop your CSV file here' : 'Drop your CSV file here or click to browse'}
+          </p>
+          <p className="text-sm text-gray-500">Supports any CSV format with headers</p>
+          <input
+            id="file-upload"
+            type="file"
+            accept=".csv"
+            onChange={handleFileInputChange}
+            className="hidden"
+          />
+        </div>
 
         <div className="mt-8 p-6 bg-blue-50 rounded-lg">
           <h3 className="font-semibold text-blue-900 mb-3">Features:</h3>

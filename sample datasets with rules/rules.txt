@@ -1,0 +1,66 @@
+supplier contract tracking:
+
+{
+  "rules": [
+    { "type": "sum", "field": "contract_value", "label": "Total Contract Value" },
+    { "type": "sum", "field": "monthly_spend", "label": "Total Monthly Spend" },
+    { "type": "average", "field": "risk_score", "label": "Avg Risk Score" },
+    { "type": "count", "field": "*", "label": "Total Contracts" },
+    { "type": "flag", "condition": "days_overdue > 30", "label": "Payment Overdue 30+ Days" },
+    { "type": "flag", "condition": "risk_score >= 7", "label": "High Risk Contract" },
+    { "type": "flag", "condition": "status === 'Expiring'", "label": "Contract Expiring Soon" }
+  ]
+}
+
+students performance:
+
+{
+  "rules": [
+    { "type": "average", "field": "grade", "label": "Average Grade" },
+    { "type": "average", "field": "attendance", "label": "Avg Attendance" },
+    { "type": "count", "field": "*", "label": "Total Records" },
+    { "type": "flag", "condition": "grade < 60", "label": "Failing Grade" },
+    { "type": "flag", "condition": "attendance < 0.80", "label": "Low Attendance" }
+  ]
+}
+
+sales data:
+
+{
+  "rules": [
+    {
+      "type": "sum",
+      "field": "revenue",
+      "label": "Total Revenue"
+    },
+    {
+      "type": "average",
+      "field": "margin",
+      "label": "Avg Margin"
+    },
+    {
+      "type": "count",
+      "field": "*",
+      "label": "Total Records"
+    },
+    {
+      "type": "flag",
+      "condition": "revenue < 0",
+      "label": "Negative Revenue",
+      "flagField": "warning"
+    }
+  ]
+}
+
+personal finance:
+
+{
+  "rules": [
+    { "type": "sum", "field": "amount", "label": "Net Cash Flow" },
+    { "type": "average", "field": "amount", "label": "Avg Transaction" },
+    { "type": "count", "field": "*", "label": "Total Transactions" },
+    { "type": "flag", "condition": "amount < -200", "label": "Large Expense (>$200)" },
+    { "type": "flag", "condition": "category === 'Dining' && amount < -50", "label": "Expensive Meal" },
+    { "type": "flag", "condition": "is_recurring === false && amount < -100", "label": "Non-Recurring Large Purchase" }
+  ]
+}

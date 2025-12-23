@@ -1,0 +1,33 @@
+date,category,description,amount,payment_method,merchant,account,tags,is_recurring
+2024-01-05,Housing,Rent Payment,-1500,Bank Transfer,Landlord LLC,Checking,housing;fixed,TRUE
+2024-01-08,Groceries,Weekly Shopping,-127.45,Credit Card,Whole Foods,Chase Visa,food;grocery,FALSE
+2024-01-10,Transportation,Gas Station,-52.30,Debit Card,Shell,Checking,transport;car,FALSE
+2024-01-12,Dining,Restaurant Dinner,-78.90,Credit Card,Italian Bistro,Chase Visa,food;dining,FALSE
+2024-01-15,Income,Salary Deposit,3500,Direct Deposit,Employer Inc,Checking,income;salary,TRUE
+2024-01-18,Utilities,Electric Bill,-89.50,Auto Pay,Power Company,Checking,utilities;fixed,TRUE
+2024-01-20,Entertainment,Movie Tickets,-32.00,Credit Card,Cinema Complex,Chase Visa,entertainment,FALSE
+2024-01-22,Groceries,Weekly Shopping,-145.20,Credit Card,Trader Joes,Chase Visa,food;grocery,FALSE
+2024-01-25,Healthcare,Pharmacy,-45.00,HSA Card,CVS Pharmacy,HSA Account,health;medical,FALSE
+2024-01-28,Dining,Coffee Shop,-15.50,Credit Card,Starbucks,Chase Visa,food;coffee,FALSE
+2024-02-01,Utilities,Internet Bill,-79.99,Auto Pay,ISP Provider,Checking,utilities;fixed,TRUE
+2024-02-03,Transportation,Uber Ride,-28.75,Credit Card,Uber,Chase Visa,transport;rideshare,FALSE
+2024-02-05,Housing,Rent Payment,-1500,Bank Transfer,Landlord LLC,Checking,housing;fixed,TRUE
+2024-02-07,Shopping,Clothing Purchase,-156.80,Credit Card,Department Store,Chase Visa,shopping;clothes,FALSE
+2024-02-10,Groceries,Weekly Shopping,-132.90,Credit Card,Whole Foods,Chase Visa,food;grocery,FALSE
+2024-02-12,Subscriptions,Streaming Service,-14.99,Credit Card,Netflix,Chase Visa,entertainment;subscription,TRUE
+2024-02-15,Income,Salary Deposit,3500,Direct Deposit,Employer Inc,Checking,income;salary,TRUE
+2024-02-18,Dining,Fast Food,-23.40,Debit Card,Chipotle,Checking,food;dining,FALSE
+2024-02-20,Transportation,Gas Station,-58.20,Debit Card,Shell,Checking,transport;car,FALSE
+2024-02-22,Entertainment,Concert Tickets,-125.00,Credit Card,Ticketmaster,Chase Visa,entertainment,FALSE
+2024-02-25,Healthcare,Gym Membership,-49.99,Auto Pay,Fitness Center,Checking,health;fitness,TRUE
+2024-02-28,Utilities,Gas Bill,-67.30,Auto Pay,Gas Company,Checking,utilities;fixed,TRUE
+2024-03-01,Subscriptions,Music Streaming,-9.99,Credit Card,Spotify,Chase Visa,entertainment;subscription,TRUE
+2024-03-05,Housing,Rent Payment,-1500,Bank Transfer,Landlord LLC,Checking,housing;fixed,TRUE
+2024-03-07,Groceries,Weekly Shopping,-118.65,Credit Card,Trader Joes,Chase Visa,food;grocery,FALSE
+2024-03-10,Dining,Restaurant Lunch,-42.30,Credit Card,Thai Place,Chase Visa,food;dining,FALSE
+2024-03-12,Transportation,Car Insurance,-145.00,Auto Pay,Insurance Co,Checking,transport;insurance,TRUE
+2024-03-15,Income,Salary Deposit,3500,Direct Deposit,Employer Inc,Checking,income;salary,TRUE
+2024-03-18,Shopping,Electronics,-299.99,Credit Card,Best Buy,Chase Visa,shopping;electronics,FALSE
+2024-03-20,Utilities,Phone Bill,-85.00,Auto Pay,Mobile Carrier,Checking,utilities;phone,TRUE
+2024-03-22,Groceries,Weekly Shopping,-141.75,Credit Card,Whole Foods,Chase Visa,food;grocery,FALSE
+2024-03-25,Dining,Pizza Delivery,-36.50,Credit Card,Dominos,Chase Visa,food;dining,FALSE

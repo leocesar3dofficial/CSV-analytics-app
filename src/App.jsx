@@ -1,15 +1,22 @@
-import { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import Papa from 'papaparse';
-import { DEFAULT_RULES } from './utils/constants';
+
+// Hooks
 import useCSVProcessor from './hooks/useCSVProcessor';
 import usePagination from './hooks/usePagination';
+
+// Components
 import UploadView from './components/UploadView';
 import DashboardView from './components/DashboardView';
 import DataTableView from './components/DataTableView';
 import RulesView from './components/RulesView';
+
+// Utils
+import { DEFAULT_RULES } from './utils/constants';
 import { extractHeaders, generateChartData } from './utils/csvHelpers';
 
-export default function CSVAnalyticsApp() {
+export default function App() {
+  // State
   const [data, setData] = useState([]);
   const [headers, setHeaders] = useState([]);
   const [rules, setRules] = useState(DEFAULT_RULES);
@@ -17,6 +24,16 @@ export default function CSVAnalyticsApp() {
   const [filterValue, setFilterValue] = useState('');
   const [view, setView] = useState('upload');
 
+  // Custom hooks
+  const processedData = useCSVProcessor(data, rules, filterField, filterValue);
+  const pagination = usePagination(processedData.filtered, 25);
+
+  // Derived data
+  const chartData = useMemo(() => {
+    return generateChartData(processedData.filtered, headers);
+  }, [processedData.filtered, headers]);
+
+  // Handlers
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -37,12 +54,32 @@ export default function CSVAnalyticsApp() {
     });
   };
 
-  const processedData = useCSVProcessor(data, rules, filterField, filterValue);
-  const pagination = usePagination(processedData.filtered, 25);
+  const handleLoadOtherDataSet = () => {
+    setData([]);
+    setHeaders([]);
+    pagination.resetPagination();
+    setFilterField('');
+    setFilterValue('');
+    setView('upload');
+  };
 
-  const chartData = useMemo(() => {
-    return generateChartData(processedData.filtered, headers);
-  }, [processedData.filtered, headers]);
+  const handleFilterFieldChange = (e) => {
+    setFilterField(e.target.value);
+    pagination.resetPagination();
+  };
+
+  const handleFilterValueChange = (e) => {
+    setFilterValue(e.target.value);
+    pagination.resetPagination();
+  };
+
+  const handleClearFilters = () => {
+    setFilterField('');
+    setFilterValue('');
+    pagination.resetPagination();
+  };
+
+  // View rendering
   if (view === 'upload') {
     return <UploadView onFileUpload={handleFileUpload} />;
   }
@@ -55,14 +92,7 @@ export default function CSVAnalyticsApp() {
         chartData={chartData}
         onViewData={() => setView('data')}
         onViewRules={() => setView('rules')}
-        onLoadOtherDataSet={() => {
-          setData([]);
-          setHeaders([]);
-          pagination.resetPagination();
-          setFilterField('');
-          setFilterValue('');
-          setView('upload');
-        }}
+        onLoadOtherDataSet={handleLoadOtherDataSet}
       />
     );
   }
@@ -75,19 +105,9 @@ export default function CSVAnalyticsApp() {
         pagination={pagination}
         filterField={filterField}
         filterValue={filterValue}
-        onFilterFieldChange={(e) => {
-          setFilterField(e.target.value);
-          pagination.resetPagination();
-        }}
-        onFilterValueChange={(e) => {
-          setFilterValue(e.target.value);
-          pagination.resetPagination();
-        }}
-        onClearFilters={() => {
-          setFilterField('');
-          setFilterValue('');
-          pagination.resetPagination();
-        }}
+        onFilterFieldChange={handleFilterFieldChange}
+        onFilterValueChange={handleFilterValueChange}
+        onClearFilters={handleClearFilters}
         onBackToDashboard={() => setView('dashboard')}
       />
     );
@@ -102,4 +122,6 @@ export default function CSVAnalyticsApp() {
       />
     );
   }
+
+  return null;
 }

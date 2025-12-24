@@ -27,6 +27,7 @@ export default function RulesView({ rules, onRulesChange, onBackToDashboard }) {
                 onRulesChange(JSON.parse(e.target.value));
               } catch (err) {
                 // Invalid JSON, don't update
+                alert('Invalid JSON rules');
               }
             }}
             className="w-full h-96 font-mono text-sm bg-slate-900 text-slate-200 border border-slate-700 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"

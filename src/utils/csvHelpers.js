@@ -53,5 +53,5 @@ export function generateChartData(data, headers) {
     return acc;
   }, {});
 
-  return Object.values(grouped).slice(0, 10);
+  return Object.values(grouped).slice(0, 50000);
 }

@@ -66,7 +66,7 @@ export default function DataTableView({
                   >
                     {headers.map(h => (
                       <td key={h} className="px-6 py-4 whitespace-nowrap text-sm text-dark-secondary">
-                        {typeof row[h] === 'number' ? row[h].toLocaleString() : row[h]}
+                        {row[h].toString()}
                       </td>
                     ))}
                   </tr>

@@ -23,10 +23,10 @@ export default function PaginationControls({
         <button
           key={pageNum}
           onClick={() => onPageChange(pageNum)}
-          className={`px-3 py-1 border rounded transition ${
+          className={`px-3 py-1 border rounded-lg transition-all ${
             currentPage === pageNum
-              ? 'bg-blue-600 text-white'
-              : 'hover:bg-gray-50'
+              ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-indigo-500 shadow-lg shadow-indigo-500/30'
+              : 'bg-slate-700 text-slate-200 border-slate-600 hover:bg-slate-600'
           }`}
         >
           {pageNum}
@@ -37,24 +37,24 @@ export default function PaginationControls({
 
   return (
     <div className="mt-4 flex items-center justify-between">
-      <p className="text-sm text-gray-700">
-        Showing <span className="font-medium">{startIdx + 1}</span> to{' '}
-        <span className="font-medium">{Math.min(endIdx, totalRecords)}</span> of{' '}
-        <span className="font-medium">{totalRecords}</span> records
+      <p className="text-sm text-slate-400">
+        Showing <span className="font-medium text-slate-200">{startIdx + 1}</span> to{' '}
+        <span className="font-medium text-slate-200">{Math.min(endIdx, totalRecords)}</span> of{' '}
+        <span className="font-medium text-slate-200">{totalRecords}</span> records
       </p>
       
       <div className="flex items-center gap-2">
         <button
           onClick={() => onPageChange(1)}
           disabled={currentPage === 1}
-          className="px-3 py-1 border rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition"
+          className="px-3 py-1 bg-slate-700 text-slate-200 border border-slate-600 rounded-lg hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           First
         </button>
         <button
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="px-3 py-1 border rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition"
+          className="px-3 py-1 bg-slate-700 text-slate-200 border border-slate-600 rounded-lg hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           Previous
         </button>
@@ -66,14 +66,14 @@ export default function PaginationControls({
         <button
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="px-3 py-1 border rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition"
+          className="px-3 py-1 bg-slate-700 text-slate-200 border border-slate-600 rounded-lg hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           Next
         </button>
         <button
           onClick={() => onPageChange(totalPages)}
           disabled={currentPage === totalPages}
-          className="px-3 py-1 border rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition"
+          className="px-3 py-1 bg-slate-700 text-slate-200 border border-slate-600 rounded-lg hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           Last
         </button>

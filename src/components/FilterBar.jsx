@@ -9,11 +9,11 @@ export default function FilterBar({
   onClear 
 }) {
   return (
-    <div className="bg-white rounded-lg shadow p-4 mb-6 flex gap-4">
+    <div className="bg-dark-secondary rounded-lg shadow-lg p-4 mb-6 flex gap-4 border border-dark">
       <select
         value={filterField}
         onChange={onFilterFieldChange}
-        className="border rounded px-3 py-2"
+        className="bg-slate-700 text-slate-200 border border-slate-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
       >
         <option value="">Select field...</option>
         {headers.map(h => <option key={h} value={h}>{h}</option>)}
@@ -23,18 +23,18 @@ export default function FilterBar({
         value={filterValue}
         onChange={onFilterValueChange}
         placeholder="Filter value..."
-        className="border rounded px-3 py-2 flex-1"
+        className="bg-slate-700 text-slate-200 border border-slate-600 rounded-lg px-3 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-slate-400"
       />
       <button
         onClick={onClear}
-        className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
+        className="px-4 py-2 bg-slate-700 text-slate-200 rounded-lg hover:bg-slate-600 transition-all border border-slate-600"
       >
         Clear
       </button>
       <select
         value={pageSize}
         onChange={onPageSizeChange}
-        className="border rounded px-3 py-2"
+        className="bg-slate-700 text-slate-200 border border-slate-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
       >
         <option value="25">25 per page</option>
         <option value="50">50 per page</option>

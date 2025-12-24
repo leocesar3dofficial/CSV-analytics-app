@@ -7,4 +7,17 @@ export const DEFAULT_RULES = {
   ]
 };
 
-export const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
+export const COLORS = [
+  '#8b5cf6', // Vibrant Purple
+  '#3b82f6', // Bright Blue
+  '#06b6d4', // Cyan
+  '#10b981', // Emerald Green
+  '#f59e0b', // Amber
+  '#ec4899', // Pink
+  '#a78bfa', // Light Purple
+  '#60a5fa', // Sky Blue
+  '#22d3ee', // Light Cyan
+  '#34d399', // Light Green
+  '#fbbf24', // Yellow
+  '#f472b6', // Light Pink
+];

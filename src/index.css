@@ -20,9 +20,159 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #0f172a;
+  color: #e2e8f0;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
+}
+
+/* Custom Dark Theme Classes */
+.bg-dark-primary {
+  background-color: #0f172a;
+}
+
+.bg-dark-secondary {
+  background-color: #1e293b;
+}
+
+.bg-dark-card {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+.bg-dark-card-hover {
+  background: linear-gradient(135deg, #334155 0%, #475569 100%);
+}
+
+.text-dark-primary {
+  color: #f8fafc;
+}
+
+.text-dark-secondary {
+  color: #cbd5e1;
+}
+
+.text-dark-muted {
+  color: #94a3b8;
+}
+
+.border-dark {
+  border-color: #334155;
+}
+
+/* Accent Colors for Interactive Elements */
+.bg-accent-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+}
+
+.bg-accent-blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+}
+
+.bg-accent-cyan {
+  background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
+}
+
+.bg-accent-green {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+.bg-accent-orange {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+.bg-accent-pink {
+  background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+}
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+}
+
+/* Card Styles with Subtle Glow */
+.card-glow {
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(99, 102, 241, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Chart Container Styles */
+.chart-container {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 1px solid #334155;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(99, 102, 241, 0.08);
+}
+
+/* Table Styles */
+.table-dark {
+  background-color: #1e293b;
+}
+
+.table-dark thead {
+  background-color: #0f172a;
+  border-bottom: 2px solid #6366f1;
+}
+
+.table-dark tbody tr {
+  border-bottom: 1px solid #334155;
+  transition: background-color 0.2s;
+}
+
+.table-dark tbody tr:hover {
+  background-color: #334155;
+}
+
+.table-dark tbody tr.flagged {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+  border-left: 3px solid #ef4444;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #8b5cf6 0%, #a78bfa 100%);
+}
+
+::-webkit-resizer {
+  background: #6366f1;
+  box-shadow: 0 0 10px 10px #8b5cf6;
+  border: 2px solid #6366f1;
 }
